@@ -320,6 +320,26 @@ curl_brave145_mac https://tls.browserleaks.com/json | python3 -c \
 | `brave145_mac` | Chrome 145 | macOS | Brave ~1.82，含 HTTP/3 参数 |
 | `brave145_win` | Chrome 145 | Windows | Brave ~1.82，含 HTTP/3 参数 |
 | `brave145_android` | Chrome 145 | Android | Brave ~1.82，含 HTTP/3 参数 |
+| `chrome143_windows` | Chrome 143 | Windows | 兼容 `chrome145` TLS，平台头为 Windows |
+| `chrome143_macos` | Chrome 143 | macOS | 兼容 `chrome145` TLS，平台头为 macOS |
+| `chrome143_linux` | Chrome 143 | Linux | 兼容 `chrome145` TLS，平台头为 Linux |
+| `chrome143_android` | Chrome 143 | Android | 兼容 `chrome131_android` TLS，平台头为 Android |
+| `chrome143_ios` | Chrome 143 | iOS | 兼容 `safari260_ios` TLS，平台头为 iOS |
+| `chrome144_windows` | Chrome 144 | Windows | 兼容 `chrome146` TLS，平台头为 Windows |
+| `chrome144_macos` | Chrome 144 | macOS | 兼容 `chrome146` TLS，平台头为 macOS |
+| `chrome144_linux` | Chrome 144 | Linux | 兼容 `chrome146` TLS，平台头为 Linux |
+| `chrome144_android` | Chrome 144 | Android | 兼容 `chrome131_android` TLS，平台头为 Android |
+| `chrome144_ios` | Chrome 144 | iOS | 兼容 `safari260_ios` TLS，平台头为 iOS |
+| `chrome145_windows` | Chrome 145 | Windows | 平台化 Chrome 145 |
+| `chrome145_macos` | Chrome 145 | macOS | 平台化 Chrome 145 |
+| `chrome145_linux` | Chrome 145 | Linux | 平台化 Chrome 145 |
+| `chrome145_android` | Chrome 145 | Android | 兼容 `chrome131_android` TLS，平台头为 Android |
+| `chrome145_ios` | Chrome 145 | iOS | 兼容 `safari260_ios` TLS，平台头为 iOS |
+| `chrome146_windows` | Chrome 146 | Windows | 平台化 Chrome 146 |
+| `chrome146_macos` | Chrome 146 | macOS | 平台化 Chrome 146 |
+| `chrome146_linux` | Chrome 146 | Linux | 平台化 Chrome 146 |
+| `chrome146_android` | Chrome 146 | Android | 兼容 `chrome131_android` TLS，平台头为 Android |
+| `chrome146_ios` | Chrome 146 | iOS | 兼容 `safari260_ios` TLS，平台头为 iOS |
 
 ---
 
@@ -345,6 +365,8 @@ curl_brave145_mac https://tls.browserleaks.com/json | python3 -c \
 | `safari_ios_26_0` | `curl_safari260_ios` | native |
 | `brave_146` | `curl_brave145_*` | best-effort |
 | `brave_146_PSK` | `curl_brave145_*` | best-effort |
+
+除了上面这些自定义 profile，这次还补了 `chrome143_*`、`chrome144_*`、`chrome145_*` 和 `chrome146_*` 的平台变体，它们是基于现有 Chrome / Android / iOS TLS 模型做的 best-effort 别名。
 
 其余 upstream preset 主要是 `okhttp4_android_*`、`zalando_*`、`mesh_*`、`mms_ios`、`confirmed_*` 这类 app-specific 指纹，curl-impersonate 目前没有对应的浏览器/TLS 模型，所以不在这个仓库里伪装成“已支持”。
 

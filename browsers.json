@@ -171,6 +171,206 @@
       "wrapper_script": "curl_chrome146"
     },
     {
+      "name": "chrome143_windows",
+      "browser": {
+        "name": "chrome",
+        "version": "143.0.0.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome143_windows"
+    },
+    {
+      "name": "chrome143_macos",
+      "browser": {
+        "name": "chrome",
+        "version": "143.0.0.0",
+        "os": "macOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome143_macos"
+    },
+    {
+      "name": "chrome143_linux",
+      "browser": {
+        "name": "chrome",
+        "version": "143.0.0.0",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome143_linux"
+    },
+    {
+      "name": "chrome143_android",
+      "browser": {
+        "name": "chrome",
+        "version": "143.0.0.0",
+        "os": "android14"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome143_android"
+    },
+    {
+      "name": "chrome143_ios",
+      "browser": {
+        "name": "chrome",
+        "version": "143.0.0.0",
+        "os": "iOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome143_ios"
+    },
+    {
+      "name": "chrome144_windows",
+      "browser": {
+        "name": "chrome",
+        "version": "144.0.0.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome144_windows"
+    },
+    {
+      "name": "chrome144_macos",
+      "browser": {
+        "name": "chrome",
+        "version": "144.0.0.0",
+        "os": "macOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome144_macos"
+    },
+    {
+      "name": "chrome144_linux",
+      "browser": {
+        "name": "chrome",
+        "version": "144.0.0.0",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome144_linux"
+    },
+    {
+      "name": "chrome144_android",
+      "browser": {
+        "name": "chrome",
+        "version": "144.0.0.0",
+        "os": "android14"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome144_android"
+    },
+    {
+      "name": "chrome144_ios",
+      "browser": {
+        "name": "chrome",
+        "version": "144.0.0.0",
+        "os": "iOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome144_ios"
+    },
+    {
+      "name": "chrome145_windows",
+      "browser": {
+        "name": "chrome",
+        "version": "145.0.0.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome145_windows"
+    },
+    {
+      "name": "chrome145_macos",
+      "browser": {
+        "name": "chrome",
+        "version": "145.0.0.0",
+        "os": "macOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome145_macos"
+    },
+    {
+      "name": "chrome145_linux",
+      "browser": {
+        "name": "chrome",
+        "version": "145.0.0.0",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome145_linux"
+    },
+    {
+      "name": "chrome145_android",
+      "browser": {
+        "name": "chrome",
+        "version": "145.0.0.0",
+        "os": "android14"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome145_android"
+    },
+    {
+      "name": "chrome145_ios",
+      "browser": {
+        "name": "chrome",
+        "version": "145.0.0.0",
+        "os": "iOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome145_ios"
+    },
+    {
+      "name": "chrome146_windows",
+      "browser": {
+        "name": "chrome",
+        "version": "146.0.0.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome146_windows"
+    },
+    {
+      "name": "chrome146_macos",
+      "browser": {
+        "name": "chrome",
+        "version": "146.0.0.0",
+        "os": "macOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome146_macos"
+    },
+    {
+      "name": "chrome146_linux",
+      "browser": {
+        "name": "chrome",
+        "version": "146.0.0.0",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome146_linux"
+    },
+    {
+      "name": "chrome146_android",
+      "browser": {
+        "name": "chrome",
+        "version": "146.0.0.0",
+        "os": "android14"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome146_android"
+    },
+    {
+      "name": "chrome146_ios",
+      "browser": {
+        "name": "chrome",
+        "version": "146.0.0.0",
+        "os": "iOS"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome146_ios"
+    },
+    {
       "name": "chrome99_android",
       "browser": {
         "name": "chrome",

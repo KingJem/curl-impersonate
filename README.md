@@ -119,6 +119,8 @@ Notes:
 
 This list is also available in the [browsers.json](browsers.json) file.
 
+Platform-specific Chrome variants are also available for `chrome143_*`, `chrome144_*`, `chrome145_*` and `chrome146_*`.
+
 ## Install
 
 The simplest way is to download the prebuilt binaries from the [release page](https://github.com/lexiforest/curl-impersonate/releases).
