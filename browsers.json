@@ -71,6 +71,46 @@
             "wrapper_script": "curl_chrome116"
         },
         {
+            "name": "chrome149",
+            "browser": {
+                "name": "chrome",
+                "version": "149.0.0.0",
+                "os": "win10"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_chrome149"
+        },
+        {
+            "name": "chrome148",
+            "browser": {
+                "name": "chrome",
+                "version": "148.0.0.0",
+                "os": "win10"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_chrome148"
+        },
+        {
+            "name": "chrome146_macos",
+            "browser": {
+                "name": "chrome",
+                "version": "146.0.0.0",
+                "os": "macos"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_chrome146"
+        },
+        {
+            "name": "chrome146_win",
+            "browser": {
+                "name": "chrome",
+                "version": "146.0.0.0",
+                "os": "win10"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_chrome146_win"
+        },
+        {
             "name": "chrome99_android",
             "browser": {
                 "name": "chrome",
@@ -120,6 +160,36 @@
             },
             "binary": "curl-impersonate",
             "wrapper_script": "curl_safari15_5"
+        },
+        {
+            "name": "firefox135_mac",
+            "browser": {
+                "name": "firefox",
+                "version": "135.0",
+                "os": "macos"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_firefox135"
+        },
+        {
+            "name": "firefox135_win",
+            "browser": {
+                "name": "firefox",
+                "version": "135.0",
+                "os": "win10"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_firefox135_win"
+        },
+        {
+            "name": "firefox151",
+            "browser": {
+                "name": "firefox",
+                "version": "151.0",
+                "os": "win10"
+            },
+            "binary": "curl-impersonate",
+            "wrapper_script": "curl_firefox151"
         }
     ]
 }
