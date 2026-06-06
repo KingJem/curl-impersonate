@@ -34,12 +34,12 @@ jobs:
           disk-root: "C:"
 
       - name: Install python 3.11
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install NASM
         shell: cmd
