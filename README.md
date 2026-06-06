@@ -126,7 +126,9 @@ Notes:
 3. The version postfix `-a`(e.g. `chrome133a`) means that this is an alternative version, i.e. the fingerprint has not been officially updated by browser, but has been observed because of A/B testing.
 </small>
 
-~~This list is also available in the [browsers.json](browsers.json) file.()~~ Needs to be updated.
+This list is also available in the [browsers.json](browsers.json) file.
+
+Platform-specific Chrome variants are also available for `chrome143_*`, `chrome144_*`, `chrome145_*` and `chrome146_*`.
 
 ## Install
 
