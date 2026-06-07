@@ -39,6 +39,12 @@ jobs:
       - name: Check if tag is present
         id: check_tag
         run: |
+          if [[ "${GITHUB_REPOSITORY}" == "lexiforest/curl-impersonate" ]]; then
+            echo "docker_namespace=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
+          else
+            echo "docker_namespace=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          fi
+
           if [[ "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
             echo "push_image=true" >> $GITHUB_ENV
             echo "image_tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
@@ -54,8 +60,8 @@ jobs:
           file: docker/debian.dockerfile
           push: ${{ github.repository == 'lexiforest/curl-impersonate' && env.push_image == 'true' && 'true' || 'false' }}
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/curl-impersonate:${{ env.image_tag }}
-            ${{ secrets.DOCKER_USERNAME }}/curl-impersonate:latest
+            ${{ env.docker_namespace }}/curl-impersonate:${{ env.image_tag }}
+            ${{ env.docker_namespace }}/curl-impersonate:latest
 
       - name: Build alpine docker image
         uses: docker/build-push-action@v6
@@ -64,5 +70,5 @@ jobs:
           file: docker/alpine.dockerfile
           push: ${{ github.repository == 'lexiforest/curl-impersonate' && env.push_image == 'true' && 'true' || 'false' }}
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/curl-impersonate:${{ env.image_tag }}-alpine
-            ${{ secrets.DOCKER_USERNAME }}/curl-impersonate:alpine
+            ${{ env.docker_namespace }}/curl-impersonate:${{ env.image_tag }}-alpine
+            ${{ env.docker_namespace }}/curl-impersonate:alpine
