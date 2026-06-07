@@ -371,6 +371,26 @@
       "wrapper_script": "curl_chrome146_ios"
     },
     {
+      "name": "chrome148_windows",
+      "browser": {
+        "name": "chrome",
+        "version": "148.0.0.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome148"
+    },
+    {
+      "name": "chrome149_windows",
+      "browser": {
+        "name": "chrome",
+        "version": "149.0.0.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_chrome149"
+    },
+    {
       "name": "chrome99_android",
       "browser": {
         "name": "chrome",
