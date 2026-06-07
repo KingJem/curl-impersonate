@@ -26,7 +26,7 @@ jobs:
       ZIG_FLAGS: -target x86_64-linux-gnu.2.17
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           submodules: recursive
 
@@ -59,7 +59,7 @@ jobs:
           make checkbuild BUILD_DIR=build CMAKE_CONFIGURE_ARGS="$cmake_args"
           make install BUILD_DIR=build CMAKE_CONFIGURE_ARGS="$cmake_args"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
