@@ -24,7 +24,7 @@ signature:
       window_size_increment: 15663105
     - frame_type: HEADERS
       headers:
-      - 'sec-ch-ua: "Chromium";v="149", "Google Chrome";v="149", "Not_A Brand";v="99"'
+      - 'sec-ch-ua: "Chromium";v="149", "Not)A;Brand";v="24"'
       - 'sec-ch-ua-mobile: ?0'
       - 'sec-ch-ua-platform: "Windows"'
       - 'upgrade-insecure-requests: 1'
@@ -94,10 +94,6 @@ signature:
       - 2
       length: 3
       type: compress_certificate
-    - data: !!binary |
-        AAA=
-      length: 2
-      type: 51764
     - length: 1
       type: renegotiation_info
     - length: 0

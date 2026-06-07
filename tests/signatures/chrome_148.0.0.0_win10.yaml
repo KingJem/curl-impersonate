@@ -64,7 +64,9 @@ signature:
     comp_methods:
     - 0
     extensions:
-    - length: 0
+    - data: !!binary |
+        AA==
+      length: 1
       type: GREASE
     - length: 282
       type: encrypted_client_hello
