@@ -20,6 +20,9 @@ env:
   MACOSX_DEPLOYMENT_TARGET: 11.0
   API: "21"  # Targeting an very old android API version
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     name: (${{ matrix.host_label }}) Build curl-impersonate
