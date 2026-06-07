@@ -5293,7 +5293,7 @@ index 0000000000..aabbccddee
 +  },
 +  {
 +    .target = "chrome148_windows",
-+    .alias = "chrome148_windows",
++    .alias = "chrome148",
 +    .httpversion = CURL_HTTP_VERSION_2_0,
 +    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
 +    .ciphers =
@@ -5372,7 +5372,7 @@ index 0000000000..aabbccddee
 +
 +  {
 +    .target = "chrome149_windows",
-+    .alias = "chrome149_windows",
++    .alias = "chrome149",
 +    .httpversion = CURL_HTTP_VERSION_2_0,
 +    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
 +    .ciphers =
