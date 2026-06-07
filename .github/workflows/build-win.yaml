@@ -26,13 +26,6 @@ jobs:
           - { sys: vcvarsarm64, env: arm64, runner: windows-11-arm }
     runs-on: ${{ matrix.runner }}
     steps:
-      - name: configure Pagefile
-        uses: al-cheb/configure-pagefile-action@v1.3
-        with:
-          minimum-size: 16GB
-          maximum-size: 16GB
-          disk-root: "C:"
-
       - name: Install python 3.11
         uses: actions/setup-python@v4
         with:
