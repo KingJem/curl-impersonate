@@ -650,6 +650,16 @@
       },
       "binary": "curl-impersonate",
       "wrapper_script": "curl_brave145_android"
+    },
+    {
+      "name": "firefox151",
+      "browser": {
+        "name": "firefox",
+        "version": "151.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox151"
     }
   ]
 }
