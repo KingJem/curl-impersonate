@@ -64,9 +64,7 @@ signature:
     comp_methods:
     - 0
     extensions:
-    - data: !!binary |
-        AA==
-      length: 1
+    - length: 0
       type: GREASE
     - length: 282
       type: encrypted_client_hello
@@ -136,7 +134,9 @@ signature:
       type: ec_point_formats
     - length: 1
       type: renegotiation_info
-    - length: 0
+    - data: !!binary |
+        AA==
+      length: 1
       type: GREASE
     handshake_version: TLS_VERSION_1_2
     record_version: TLS_VERSION_1_0
