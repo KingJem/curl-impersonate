@@ -93,14 +93,40 @@ The following browsers can be impersonated. For a full list of browser profiles,
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 133 | macOS Sequoia | `chrome133a` | [curl_chrome133a](bin/curl_chrome133a) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 136 | macOS Sequoia | `chrome136` | [curl_chrome136](bin/curl_chrome136) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 142 | macOS Tahoe | `chrome142` | [curl_chrome142](bin/curl_chrome142) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 143 | Windows 10 | `chrome143_windows` | [curl_chrome143_windows](bin/curl_chrome143_windows) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 143 | macOS | `chrome143_macos` | [curl_chrome143_macos](bin/curl_chrome143_macos) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 143 | Linux | `chrome143_linux` | [curl_chrome143_linux](bin/curl_chrome143_linux) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 143 | Android 14 | `chrome143_android` | [curl_chrome143_android](bin/curl_chrome143_android) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 143 | iOS | `chrome143_ios` | [curl_chrome143_ios](bin/curl_chrome143_ios) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 144 | Windows 10 | `chrome144_windows` | [curl_chrome144_windows](bin/curl_chrome144_windows) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 144 | macOS | `chrome144_macos` | [curl_chrome144_macos](bin/curl_chrome144_macos) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 144 | Linux | `chrome144_linux` | [curl_chrome144_linux](bin/curl_chrome144_linux) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 144 | Android 14 | `chrome144_android` | [curl_chrome144_android](bin/curl_chrome144_android) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 144 | iOS | `chrome144_ios` | [curl_chrome144_ios](bin/curl_chrome144_ios) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | macOS Tahoe | `chrome145` | [curl_chrome145](bin/curl_chrome145) | ✅ |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | Windows 10 | `chrome145_windows` | [curl_chrome145_windows](bin/curl_chrome145_windows) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | macOS | `chrome145_macos` | [curl_chrome145_macos](bin/curl_chrome145_macos) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | Linux | `chrome145_linux` | [curl_chrome145_linux](bin/curl_chrome145_linux) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | Android 14 | `chrome145_android` | [curl_chrome145_android](bin/curl_chrome145_android) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | iOS | `chrome145_ios` | [curl_chrome145_ios](bin/curl_chrome145_ios) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | macOS Tahoe | `chrome146` | [curl_chrome146](bin/curl_chrome146) | ✅ |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | Windows 10 | `chrome146_windows` | [curl_chrome146_windows](bin/curl_chrome146_windows) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | macOS | `chrome146_macos` | [curl_chrome146_macos](bin/curl_chrome146_macos) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | Linux | `chrome146_linux` | [curl_chrome146_linux](bin/curl_chrome146_linux) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | Android 14 | `chrome146_android` | [curl_chrome146_android](bin/curl_chrome146_android) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | iOS | `chrome146_ios` | [curl_chrome146_ios](bin/curl_chrome146_ios) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 148 | Windows 10 | `chrome148` | [curl_chrome148](bin/curl_chrome148) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 149 | Windows 10 | `chrome149` | [curl_chrome149](bin/curl_chrome149) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 99 | Android 12 | `chrome99_android` | [curl_chrome99_android](bin/curl_chrome99_android) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 131 | Android 14 | `chrome131_android` | [curl_chrome131_android](bin/curl_chrome131_android) |
 | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_24x24.png "Edge") | 99 | Windows 10 | `edge99` | [curl_edge99](bin/curl_edge99) |
 | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_24x24.png "Edge") | 101 | Windows 10 | `edge101` | [curl_edge101](bin/curl_edge101) |
+| ![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_24x24.png "Brave") | 136 | macOS | `brave136_mac` | [curl_brave136_mac](bin/curl_brave136_mac) |
+| ![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_24x24.png "Brave") | 136 | Windows | `brave136_win` | [curl_brave136_win](bin/curl_brave136_win) |
+| ![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_24x24.png "Brave") | 136 | Android | `brave136_android` | [curl_brave136_android](bin/curl_brave136_android) |
+| ![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_24x24.png "Brave") | 145 | macOS | `brave145_mac` | [curl_brave145_mac](bin/curl_brave145_mac) |
+| ![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_24x24.png "Brave") | 145 | Windows | `brave145_win` | [curl_brave145_win](bin/curl_brave145_win) |
+| ![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_24x24.png "Brave") | 145 | Android | `brave145_android` | [curl_brave145_android](bin/curl_brave145_android) |
 | ![Safari](https://github.com/alrra/browser-logos/blob/main/src/safari/safari_24x24.png "Safari") | 15.3 | macOS Big Sur | `safari153` | [curl_safari153](bin/curl_safari153) |
 | ![Safari](https://github.com/alrra/browser-logos/blob/main/src/safari/safari_24x24.png "Safari") | 15.5 | macOS Monterey | `safari155` | [curl_safari155](bin/curl_safari155) |
 | ![Safari](https://github.com/alrra/browser-logos/blob/main/src/safari/safari_24x24.png "Safari") | 17.0 | macOS Sonoma | `safari170` | [curl_safari170](bin/curl_safari170) |
@@ -128,7 +154,7 @@ Notes:
 
 This list is also available in the [browsers.json](browsers.json) file.
 
-Platform-specific Chrome variants are also available for `chrome143_*`, `chrome144_*`, `chrome145_*` and `chrome146_*`.
+See `CUSTOM_PROFILES.md` for implementation notes about the Chrome platform aliases and Brave profiles.
 
 ## Install
 
