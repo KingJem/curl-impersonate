@@ -24,9 +24,10 @@ signature:
       window_size_increment: 15663105
     - frame_type: HEADERS
       headers:
-      - 'sec-ch-ua: "Chromium";v="149", "Google Chrome";v="149", "Not_A Brand";v="99"'
+      - 'sec-ch-ua: "Chromium";v="149", "Not)A;Brand";v="24"'
       - 'sec-ch-ua-mobile: ?0'
       - 'sec-ch-ua-platform: "Windows"'
+      - 'accept-language: en-US,en;q=0.9'
       - 'upgrade-insecure-requests: 1'
       - 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36'
       - 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
@@ -35,7 +36,6 @@ signature:
       - 'sec-fetch-user: ?1'
       - 'sec-fetch-dest: document'
       - 'accept-encoding: gzip, deflate, br, zstd'
-      - 'accept-language: en-US,en;q=0.9'
       - 'priority: u=0, i'
       pseudo_headers:
       - :method
@@ -94,10 +94,6 @@ signature:
       - 2
       length: 3
       type: compress_certificate
-    - data: !!binary |
-        AAA=
-      length: 2
-      type: 51764
     - length: 1
       type: renegotiation_info
     - length: 0

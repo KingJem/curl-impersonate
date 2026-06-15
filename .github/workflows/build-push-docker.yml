@@ -40,6 +40,12 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
+          if [[ "${GITHUB_REPOSITORY}" == "lexiforest/curl-impersonate" ]]; then
+            echo "docker_namespace=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
+          else
+            echo "docker_namespace=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          fi
+
           if [[ "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
             echo "push_image=true" >> $GITHUB_ENV
             echo "image_tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
