@@ -45,6 +45,10 @@ extended list as an API on `impersonate.pro <https://impersonate.pro>`_. See :do
    "Firefox", "135.0", "macOS Sonoma", "``firefox135``", "``curl_firefox135``", ""
    "Firefox", "144.0", "macOS Tahoe", "``firefox144``", "``curl_firefox144``", ""
    "Firefox", "147.0", "macOS Tahoe", "``firefox147``", "``curl_firefox147``", "Yes"
+   "Firefox", "150.0.2", "macOS", "``firefox150``", "``curl_firefox150``", ""
+   "Firefox", "151.0", "Windows 10", "``firefox151``", "``curl_firefox151``", ""
+   "Firefox", "152.0b1", "macOS", "``firefox152``", "``curl_firefox152``", ""
+   "Firefox", "153.0a1", "macOS", "``firefox153``", "``curl_firefox153``", ""
    "Tor", "14.5", "macOS Sonoma", "``tor145``", "``curl_tor145``", ""
 
 Notes:

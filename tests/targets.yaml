@@ -131,6 +131,18 @@
   - null
   - null
   - firefox_144.0.0_macOS
+- - curl_firefox150
+  - null
+  - null
+  - firefox_150.0.2_macOS
+- - curl_firefox152
+  - null
+  - null
+  - firefox_152.0b1_macOS
+- - curl_firefox153
+  - null
+  - null
+  - firefox_153.0a1_macOS
 - - curl_tor145
   - null
   - null
@@ -267,6 +279,18 @@
   - CURL_IMPERSONATE: firefox135
   - libcurl-impersonate
   - firefox_135.0.1_macOS
+- - minicurl
+  - CURL_IMPERSONATE: firefox150
+  - libcurl-impersonate
+  - firefox_150.0.2_macOS
+- - minicurl
+  - CURL_IMPERSONATE: firefox152
+  - libcurl-impersonate
+  - firefox_152.0b1_macOS
+- - minicurl
+  - CURL_IMPERSONATE: firefox153
+  - libcurl-impersonate
+  - firefox_153.0a1_macOS
 - - minicurl
   - CURL_IMPERSONATE: tor145
   - libcurl-impersonate
