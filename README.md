@@ -116,6 +116,10 @@ The following browsers can be impersonated. For a full list of browser profiles,
 | ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 135.0 | macOS Sonoma | `firefox135` | [curl_firefox135](bin/curl_firefox135) |
 | ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 144.0 | macOS Tahoe | `firefox144` | [curl_firefox144](bin/curl_firefox144) |
 | ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 147.0 | macOS Tahoe | `firefox147` | [curl_firefox147](bin/curl_firefox147) | ✅ |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 150.0.2 | macOS | `firefox150` | [curl_firefox150](bin/curl_firefox150) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 151.0 | Windows 10 | `firefox151` | [curl_firefox151](bin/curl_firefox151) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 152.0b1 | macOS | `firefox152` | [curl_firefox152](bin/curl_firefox152) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 153.0a1 | macOS | `firefox153` | [curl_firefox153](bin/curl_firefox153) |
 | ![Tor](https://github.com/alrra/browser-logos/blob/main/src/tor/tor_24x24.png "Tor") | 14.5 | macOS Sonoma | `tor145` | [curl_tor145](bin/curl_tor145) |
 
 <small>

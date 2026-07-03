@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$dir/curl-impersonate" --compressed --impersonate "firefox153" "$@"
