@@ -895,7 +895,7 @@ index e533dcc..84d8c5d 100644
  bool Curl_dynhds_contains(struct dynhds *dynhds,
                            const char *name, size_t namelen);
 diff --git a/lib/easy.c b/lib/easy.c
-index 9c1f1c6..b707bce 100644
+index 9c1f1c6..2fd5dca 100644
 --- a/lib/easy.c
 +++ b/lib/easy.c
 @@ -74,9 +74,12 @@
@@ -911,7 +911,7 @@ index 9c1f1c6..b707bce 100644
  
  #include "easy_lock.h"
  
-@@ -345,6 +348,355 @@ CURLsslset curl_global_sslset(curl_sslbackend id, const char *name,
+@@ -345,6 +348,344 @@ CURLsslset curl_global_sslset(curl_sslbackend id, const char *name,
    return rc;
  }
  
@@ -1203,22 +1203,11 @@ index 9c1f1c6..b707bce 100644
 +}
 +
 +
-+static const struct impersonate_opts *binary_search(size_t size, const char *key)
++static const struct impersonate_opts *find_target(size_t size, const char *key)
 +{
-+  int low = 0;
-+  int high = size - 1;
-+
-+  while(low <= high) {
-+    int mid = low + (high - low) / 2;
-+    int cmp = strcmp(impersonations[mid].target, key);
-+
-+    if(cmp == 0) {
-+      return &impersonations[mid];
-+    } else if(cmp < 0) {
-+      low = mid + 1;
-+    } else {
-+      high = mid - 1;
-+    }
++  for(size_t i = 0; i < size; ++i) {
++    if(curl_strequal(key, impersonations[i].target))
++      return &impersonations[i];
 +  }
 +
 +  return NULL;
@@ -1236,7 +1225,7 @@ index 9c1f1c6..b707bce 100644
 +  const struct impersonate_opts *opts = NULL;
 +  struct Curl_easy *_data = (struct Curl_easy *)data;
 +
-+  opts = binary_search(num_impersonations, target);
++  opts = find_target(num_impersonations, target);
 +
 +  // If not found, fallback and search by alias again
 +  if(opts == NULL) {
@@ -1267,7 +1256,7 @@ index 9c1f1c6..b707bce 100644
  /*
   * curl_easy_init() is the external interface to alloc, setup and init an
   * easy handle that is returned. If anything goes wrong, NULL is returned.
-@@ -353,6 +705,8 @@ CURL *curl_easy_init(void)
+@@ -353,6 +694,8 @@ CURL *curl_easy_init(void)
  {
    CURLcode result;
    struct Curl_easy *data;
@@ -1276,7 +1265,7 @@ index 9c1f1c6..b707bce 100644
  
    /* Make sure we inited the global SSL stuff */
    global_init_lock();
-@@ -375,6 +729,30 @@ CURL *curl_easy_init(void)
+@@ -375,6 +718,30 @@ CURL *curl_easy_init(void)
      return NULL;
    }
  
@@ -1307,7 +1296,7 @@ index 9c1f1c6..b707bce 100644
    return data;
  }
  
-@@ -1017,6 +1395,13 @@ CURL *curl_easy_duphandle(CURL *d)
+@@ -1017,6 +1384,13 @@ CURL *curl_easy_duphandle(CURL *d)
      outcurl->state.referer_alloc = TRUE;
    }
  
@@ -1321,7 +1310,7 @@ index 9c1f1c6..b707bce 100644
    /* Reinitialize an SSL engine for the new handle
     * note: the engine name has already been copied by dupset */
    if(outcurl->set.str[STRING_SSL_ENGINE]) {
-@@ -1073,6 +1458,9 @@ fail:
+@@ -1073,6 +1447,9 @@ fail:
   */
  void curl_easy_reset(CURL *d)
  {
@@ -1331,7 +1320,7 @@ index 9c1f1c6..b707bce 100644
    struct Curl_easy *data = d;
    Curl_req_hard_reset(&data->req, data);
    Curl_hash_clean(&data->meta_hash);
-@@ -1106,6 +1494,23 @@ void curl_easy_reset(CURL *d)
+@@ -1106,6 +1483,23 @@ void curl_easy_reset(CURL *d)
    Curl_http_auth_cleanup_digest(data);
  #endif
    data->master_mid = UINT_MAX;
