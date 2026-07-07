@@ -147,6 +147,38 @@
   - null
   - null
   - firefox_153.0a1_macOS
+- - curl_firefox150_windows
+  - null
+  - null
+  - firefox_150.0.2_win10
+- - curl_firefox150_linux
+  - null
+  - null
+  - firefox_150.0.2_linux
+- - curl_firefox151_windows
+  - null
+  - null
+  - firefox_151.0_win10
+- - curl_firefox151_linux
+  - null
+  - null
+  - firefox_151.0_linux
+- - curl_firefox152_windows
+  - null
+  - null
+  - firefox_152.0b1_win10
+- - curl_firefox152_linux
+  - null
+  - null
+  - firefox_152.0b1_linux
+- - curl_firefox153_windows
+  - null
+  - null
+  - firefox_153.0a1_win10
+- - curl_firefox153_linux
+  - null
+  - null
+  - firefox_153.0a1_linux
 - - curl_tor145
   - null
   - null
@@ -299,6 +331,38 @@
   - CURL_IMPERSONATE: firefox153
   - libcurl-impersonate
   - firefox_153.0a1_macOS
+- - minicurl
+  - CURL_IMPERSONATE: firefox150_windows
+  - libcurl-impersonate
+  - firefox_150.0.2_win10
+- - minicurl
+  - CURL_IMPERSONATE: firefox150_linux
+  - libcurl-impersonate
+  - firefox_150.0.2_linux
+- - minicurl
+  - CURL_IMPERSONATE: firefox151_windows
+  - libcurl-impersonate
+  - firefox_151.0_win10
+- - minicurl
+  - CURL_IMPERSONATE: firefox151_linux
+  - libcurl-impersonate
+  - firefox_151.0_linux
+- - minicurl
+  - CURL_IMPERSONATE: firefox152_windows
+  - libcurl-impersonate
+  - firefox_152.0b1_win10
+- - minicurl
+  - CURL_IMPERSONATE: firefox152_linux
+  - libcurl-impersonate
+  - firefox_152.0b1_linux
+- - minicurl
+  - CURL_IMPERSONATE: firefox153_windows
+  - libcurl-impersonate
+  - firefox_153.0a1_win10
+- - minicurl
+  - CURL_IMPERSONATE: firefox153_linux
+  - libcurl-impersonate
+  - firefox_153.0a1_linux
 - - minicurl
   - CURL_IMPERSONATE: tor145
   - libcurl-impersonate

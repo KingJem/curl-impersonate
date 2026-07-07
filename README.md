@@ -121,6 +121,14 @@ The following browsers can be impersonated. For a full list of browser profiles,
 | ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 151.0 | Windows 10 | `firefox151` | [curl_firefox151](bin/curl_firefox151) |
 | ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 152.0b1 | macOS | `firefox152` | [curl_firefox152](bin/curl_firefox152) |
 | ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 153.0a1 | macOS | `firefox153` | [curl_firefox153](bin/curl_firefox153) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 150.0.2 | Windows 10 | `firefox150_windows` | [curl_firefox150_windows](bin/curl_firefox150_windows) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 150.0.2 | Linux | `firefox150_linux` | [curl_firefox150_linux](bin/curl_firefox150_linux) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 151.0 | Windows 10 | `firefox151_windows` | [curl_firefox151_windows](bin/curl_firefox151_windows) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 151.0 | Linux | `firefox151_linux` | [curl_firefox151_linux](bin/curl_firefox151_linux) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 152.0b1 | Windows 10 | `firefox152_windows` | [curl_firefox152_windows](bin/curl_firefox152_windows) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 152.0b1 | Linux | `firefox152_linux` | [curl_firefox152_linux](bin/curl_firefox152_linux) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 153.0a1 | Windows 10 | `firefox153_windows` | [curl_firefox153_windows](bin/curl_firefox153_windows) |
+| ![Firefox](https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_24x24.png "Firefox") | 153.0a1 | Linux | `firefox153_linux` | [curl_firefox153_linux](bin/curl_firefox153_linux) |
 | ![Tor](https://github.com/alrra/browser-logos/blob/main/src/tor/tor_24x24.png "Tor") | 14.5 | macOS Sonoma | `tor145` | [curl_tor145](bin/curl_tor145) |
 
 <small>

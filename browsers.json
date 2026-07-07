@@ -700,6 +700,86 @@
       },
       "binary": "curl-impersonate",
       "wrapper_script": "curl_firefox153"
+    },
+    {
+      "name": "firefox150_windows",
+      "browser": {
+        "name": "firefox",
+        "version": "150.0.2",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox150_windows"
+    },
+    {
+      "name": "firefox150_linux",
+      "browser": {
+        "name": "firefox",
+        "version": "150.0.2",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox150_linux"
+    },
+    {
+      "name": "firefox151_windows",
+      "browser": {
+        "name": "firefox",
+        "version": "151.0",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox151_windows"
+    },
+    {
+      "name": "firefox151_linux",
+      "browser": {
+        "name": "firefox",
+        "version": "151.0",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox151_linux"
+    },
+    {
+      "name": "firefox152_windows",
+      "browser": {
+        "name": "firefox",
+        "version": "152.0b1",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox152_windows"
+    },
+    {
+      "name": "firefox152_linux",
+      "browser": {
+        "name": "firefox",
+        "version": "152.0b1",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox152_linux"
+    },
+    {
+      "name": "firefox153_windows",
+      "browser": {
+        "name": "firefox",
+        "version": "153.0a1",
+        "os": "win10"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox153_windows"
+    },
+    {
+      "name": "firefox153_linux",
+      "browser": {
+        "name": "firefox",
+        "version": "153.0a1",
+        "os": "linux"
+      },
+      "binary": "curl-impersonate",
+      "wrapper_script": "curl_firefox153_linux"
     }
   ]
 }

@@ -3,6 +3,9 @@
 The `firefox150`, `firefox152`, and `firefox153` profiles are based on live
 captures from `tls.browserleaks.com/json` and `tls.peet.ws/api/all`.
 
+Platform (Windows / Linux) variants of Firefox 150–153 are documented in
+[Windows and Linux Variants](#windows-and-linux-variants) below.
+
 ## Browser Builds
 
 | Profile | Browser build | Automation | Platform |
@@ -85,3 +88,46 @@ Repeat the commands with the 152 and 153 capture files.
 
 The raw capture files are committed under `tests/captures/` so future profile
 changes can be reviewed against the source evidence.
+
+## Windows and Linux Variants
+
+The base `firefox150`/`firefox151`/`firefox152`/`firefox153` profiles carry a
+macOS (or, for `firefox151`, a Windows) User-Agent. To impersonate Firefox on
+other desktop platforms, the following per-OS variants are provided:
+
+| Profile | Version | Platform | Wrapper |
+|---|---|---|---|
+| `firefox150_windows` | 150.0.2 | Windows 10 | `curl_firefox150_windows` |
+| `firefox150_linux`   | 150.0.2 | Linux      | `curl_firefox150_linux` |
+| `firefox151_windows` | 151.0   | Windows 10 | `curl_firefox151_windows` |
+| `firefox151_linux`   | 151.0   | Linux      | `curl_firefox151_linux` |
+| `firefox152_windows` | 152.0b1 | Windows 10 | `curl_firefox152_windows` |
+| `firefox152_linux`   | 152.0b1 | Linux      | `curl_firefox152_linux` |
+| `firefox153_windows` | 153.0a1 | Windows 10 | `curl_firefox153_windows` |
+| `firefox153_linux`   | 153.0a1 | Linux      | `curl_firefox153_linux` |
+
+### How they are derived
+
+Firefox uses **NSS**, whose TLS ClientHello is **operating-system independent**,
+and Firefox does **not** send `sec-ch-ua`. The only observable per-OS difference
+is the `User-Agent` string. Each variant therefore reuses the corresponding base
+profile's already-verified TLS / HTTP2 / HTTP3 signature unchanged and only
+swaps the User-Agent (the same approach as the pre-existing `firefox135_win`):
+
+```
+Windows: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:V.0) Gecko/20100101 Firefox/V.0
+Linux:   Mozilla/5.0 (X11; Linux x86_64; rv:V.0) Gecko/20100101 Firefox/V.0
+```
+
+These variants were **not** re-captured from a live browser; they are derived
+from the base profiles above. Their test signatures under `tests/signatures/`
+(`firefox_<version>_{win10,linux}.yaml`) are clones of the corresponding base
+signature with only the User-Agent (and `os`/`version` metadata) changed, so the
+test suite still verifies the emitted ClientHello and HTTP/2 frames field by
+field.
+
+### firefox151 note
+
+`firefox151` has no upstream capture. It is identical to `firefox152` except for
+`record_size_limit` (16385 vs 4001) and `accept-language`, so its signature is
+derived from `firefox152` with just those two fields adjusted.
