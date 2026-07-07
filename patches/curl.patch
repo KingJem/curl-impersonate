@@ -2591,7 +2591,7 @@ new file mode 100644
 index 0000000..b506a95
 --- /dev/null
 +++ b/lib/impersonate.c
-@@ -0,0 +1,4833 @@
+@@ -0,0 +1,5381 @@
 +#include "curl_setup.h"
 +#include <curl/curl.h>
 +#include "impersonate.h"
@@ -6055,6 +6055,554 @@ index 0000000..b506a95
 +      "TLS_RSA_WITH_AES_256_CBC_SHA",
 +    .http_headers = {
 +      "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US,en;q=0.9",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512",
++    .tls_record_size_limit = 4001,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 2,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox150_windows",
++    .alias = "firefox150_windows",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "ecdsa_sha1:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512:ecdsa_sha1",
++    .tls_record_size_limit = 4001,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 3,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox150_linux",
++    .alias = "firefox150_linux",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:150.0) Gecko/20100101 Firefox/150.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "ecdsa_sha1:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512:ecdsa_sha1",
++    .tls_record_size_limit = 4001,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 3,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox151_windows",
++    .alias = "firefox151_windows",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:151.0) Gecko/20100101 Firefox/151.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US,en;q=0.9",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512",
++    .tls_record_size_limit = 16385,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 3,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox151_linux",
++    .alias = "firefox151_linux",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:151.0) Gecko/20100101 Firefox/151.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US,en;q=0.9",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512",
++    .tls_record_size_limit = 16385,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 3,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox152_windows",
++    .alias = "firefox152_windows",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:152.0) Gecko/20100101 Firefox/152.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512",
++    .tls_record_size_limit = 4001,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 3,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox152_linux",
++    .alias = "firefox152_linux",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512",
++    .tls_record_size_limit = 4001,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 3,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox153_windows",
++    .alias = "firefox153_windows",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:153.0) Gecko/20100101 Firefox/153.0",
++      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
++      "Accept-Language: en-US,en;q=0.9",
++      "Accept-Encoding: gzip, deflate, br, zstd",
++      "Upgrade-Insecure-Requests: 1",
++      "Sec-Fetch-Dest: document",
++      "Sec-Fetch-Mode: navigate",
++      "Sec-Fetch-Site: none",
++      "Sec-Fetch-User: ?1",
++      "Priority: u=0, i",
++      "Te: trailers"
++    },
++    .curves = "X25519MLKEM768:X25519:P-256:P-384:P-521:ffdhe2048:ffdhe3072",
++    .sig_hash_algs =
++      "ecdsa_secp256r1_sha256:"
++      "ecdsa_secp384r1_sha384:"
++      "ecdsa_secp521r1_sha512:"
++      "rsa_pss_rsae_sha256:"
++      "rsa_pss_rsae_sha384:"
++      "rsa_pss_rsae_sha512:"
++      "rsa_pkcs1_sha256:"
++      "rsa_pkcs1_sha384:"
++      "rsa_pkcs1_sha512:"
++      "rsa_pkcs1_sha1",
++    .alpn = true,
++    .http2_settings = "1:65536;2:0;4:131072;5:16384",
++    .http2_window_update = 12517377,
++    .http2_pseudo_headers_order = "mpas",
++    .http2_stream_exclusive = 0,
++    .http2_stream_weight = 42,
++    .http3_settings = "1:65536;7:20;727725890:0;16765559:1;51:1;8:1",
++    .http3_pseudo_headers_order = "msap",
++    .quic_transport_parameters = "1:30000;4:25165824;5:12582912;6:1048576;7:1048576;8:100;9:100;11:20;14:8;15:AUTO;17:1@GREASE,1;GREASE;32:65535",
++    .http3_tls_extension_order = "28-51-27-13-34-10-45-16-65281-23-5-0-43-57-65037",
++    .cert_compression = "zlib,brotli,zstd",
++    .ech = "true",
++    .tls_session_ticket = true,
++    .tls_extension_order = "0-23-65281-10-11-35-16-5-34-18-51-43-13-45-28-27-65037",
++    .tls_delegated_credentials = "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512",
++    .tls_record_size_limit = 4001,
++    .tls_grease = false,
++    .tls_signed_cert_timestamps = true,
++    .tls_key_shares_limit = 2,
++    .split_cookies = true,
++    .form_boundary = "firefox",
++  },
++  {
++    .target = "firefox153_linux",
++    .alias = "firefox153_linux",
++    .httpversion = CURL_HTTP_VERSION_2_0,
++    .ssl_version = CURL_SSLVERSION_TLSv1_2 | CURL_SSLVERSION_MAX_DEFAULT,
++    .ciphers =
++      "TLS_AES_128_GCM_SHA256:"
++      "TLS_CHACHA20_POLY1305_SHA256:"
++      "TLS_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:"
++      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:"
++      "TLS_RSA_WITH_AES_128_GCM_SHA256:"
++      "TLS_RSA_WITH_AES_256_GCM_SHA384:"
++      "TLS_RSA_WITH_AES_128_CBC_SHA:"
++      "TLS_RSA_WITH_AES_256_CBC_SHA",
++    .http_headers = {
++      "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0",
 +      "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 +      "Accept-Language: en-US,en;q=0.9",
 +      "Accept-Encoding: gzip, deflate, br, zstd",
