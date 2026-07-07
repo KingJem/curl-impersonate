@@ -367,6 +367,10 @@ jobs:
           mem: 8192
           usesh: true
           prepare: |
+            # The FreeBSD VM image can report an OSVERSION older than the one the
+            # pkg repositories were built against, which makes `pkg update` abort
+            # with "Error updating repositories!". Ignore the mismatch.
+            export IGNORE_OSVERSION=yes
             pkg update -f
             pkg install -y pkgconf cmake ninja curl autoconf automake libtool gmake gperf go
           run: |
