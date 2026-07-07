@@ -340,6 +340,35 @@ curl_brave145_mac https://tls.browserleaks.com/json | python3 -c \
 | `chrome146_linux` | Chrome 146 | Linux | 平台化 Chrome 146 |
 | `chrome146_android` | Chrome 146 | Android | 兼容 `chrome131_android` TLS，平台头为 Android |
 | `chrome146_ios` | Chrome 146 | iOS | 兼容 `safari260_ios` TLS，平台头为 iOS |
+| `chrome150` | Chrome 150 | Windows | 真实抓包验证 TLS，`sec-ch-ua` 按 Chromium GREASE 算法推导 |
+
+---
+
+## 9.1 Chrome 150 指纹抓取记录
+
+通过 `npx @puppeteer/browsers install chrome@150.0.7871.46` 安装 Chrome for Testing 150，
+以无头/有头方式访问 `https://tls.peet.ws/api/all` 与 `https://tls.browserleaks.com/json` 抓取真实指纹
+（原始结果保存在 `tests/captures/chrome_150.0.7871.46_win10_{peet,browserleaks}.json`）。
+
+**验证结果**（真实 Chrome 150）：
+
+```
+User-Agent:  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+JA4:         t13d1517h2_8daaf6152771_cb7bf5808d99
+Akamai HTTP2:1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p
+ciphers:     与 chrome146/148/149 完全一致（BoringSSL 未变）
+curves:      X25519MLKEM768:X25519:P-256:P-384（与现有 Chrome profile 一致）
+```
+
+TLS/HTTP2/HTTP3 参数与 `chrome149` 完全相同（BoringSSL 栈自 Chrome 131 起未变），因此 `chrome150`
+直接沿用 `chrome149` 的 TLS 模型，仅更新版本相关的 `User-Agent` 与 `sec-ch-ua`。
+
+> **关于 `sec-ch-ua`**：Chrome for Testing 是**无品牌**构建，不发送 `sec-ch-ua`，
+> `navigator.userAgentData.brands` 为空。因此 `sec-ch-ua` 采用 Chromium 的 GREASE 品牌算法推导：
+> GREASE 品牌 = `Not{chars[v%11]}A{chars[(v+1)%11]}Brand`（`chars = " ( : - . / ) ; = ? _"`），
+> 版本 = `["8","99","24"][v%3]`，三品牌排序 = `orders[v%6]`。该算法已用仓库中 `chrome145/146/148`
+> 的已知值校验通过。对 v=150 推导得：
+> `sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150", "Google Chrome";v="150"`
 
 ---
 
