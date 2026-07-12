@@ -22,8 +22,28 @@ extended list as an API on `impersonate.pro <https://impersonate.pro>`_. See :do
    "Chrome", "133", "macOS Sequoia", "``chrome133a``", "``curl_chrome133a``", ""
    "Chrome", "136", "macOS Sequoia", "``chrome136``", "``curl_chrome136``", ""
    "Chrome", "142", "macOS Tahoe", "``chrome142``", "``curl_chrome142``", ""
+   "Chrome", "143", "Windows 10", "``chrome143_windows``", "``curl_chrome143_windows``", ""
+   "Chrome", "143", "macOS", "``chrome143_macos``", "``curl_chrome143_macos``", ""
+   "Chrome", "143", "Linux", "``chrome143_linux``", "``curl_chrome143_linux``", ""
+   "Chrome", "143", "Android 14", "``chrome143_android``", "``curl_chrome143_android``", ""
+   "Chrome", "143", "iOS", "``chrome143_ios``", "``curl_chrome143_ios``", ""
+   "Chrome", "144", "Windows 10", "``chrome144_windows``", "``curl_chrome144_windows``", ""
+   "Chrome", "144", "macOS", "``chrome144_macos``", "``curl_chrome144_macos``", ""
+   "Chrome", "144", "Linux", "``chrome144_linux``", "``curl_chrome144_linux``", ""
+   "Chrome", "144", "Android 14", "``chrome144_android``", "``curl_chrome144_android``", ""
+   "Chrome", "144", "iOS", "``chrome144_ios``", "``curl_chrome144_ios``", ""
    "Chrome", "145", "macOS Tahoe", "``chrome145``", "``curl_chrome145``", "Yes"
+   "Chrome", "145", "Windows 10", "``chrome145_windows``", "``curl_chrome145_windows``", ""
+   "Chrome", "145", "macOS", "``chrome145_macos``", "``curl_chrome145_macos``", ""
+   "Chrome", "145", "Linux", "``chrome145_linux``", "``curl_chrome145_linux``", ""
+   "Chrome", "145", "Android 14", "``chrome145_android``", "``curl_chrome145_android``", ""
+   "Chrome", "145", "iOS", "``chrome145_ios``", "``curl_chrome145_ios``", ""
    "Chrome", "146", "macOS Tahoe", "``chrome146``", "``curl_chrome146``", "Yes"
+   "Chrome", "146", "Windows 10", "``chrome146_windows``", "``curl_chrome146_windows``", ""
+   "Chrome", "146", "macOS", "``chrome146_macos``", "``curl_chrome146_macos``", ""
+   "Chrome", "146", "Linux", "``chrome146_linux``", "``curl_chrome146_linux``", ""
+   "Chrome", "146", "Android 14", "``chrome146_android``", "``curl_chrome146_android``", ""
+   "Chrome", "146", "iOS", "``chrome146_ios``", "``curl_chrome146_ios``", ""
    "Chrome", "148", "Windows 10", "``chrome148``", "``curl_chrome148``", ""
    "Chrome", "149", "Windows 10", "``chrome149``", "``curl_chrome149``", ""
    "Chrome", "150", "Windows 10", "``chrome150``", "``curl_chrome150``", ""
@@ -31,6 +51,12 @@ extended list as an API on `impersonate.pro <https://impersonate.pro>`_. See :do
    "Chrome", "131", "Android 14", "``chrome131_android``", "``curl_chrome131_android``", ""
    "Edge", "99", "Windows 10", "``edge99``", "``curl_edge99``", ""
    "Edge", "101", "Windows 10", "``edge101``", "``curl_edge101``", ""
+   "Brave", "136", "macOS", "``brave136_mac``", "``curl_brave136_mac``", ""
+   "Brave", "136", "Windows", "``brave136_win``", "``curl_brave136_win``", ""
+   "Brave", "136", "Android", "``brave136_android``", "``curl_brave136_android``", ""
+   "Brave", "145", "macOS", "``brave145_mac``", "``curl_brave145_mac``", ""
+   "Brave", "145", "Windows", "``brave145_win``", "``curl_brave145_win``", ""
+   "Brave", "145", "Android", "``brave145_android``", "``curl_brave145_android``", ""
    "Safari", "15.3", "macOS Big Sur", "``safari153``", "``curl_safari153``", ""
    "Safari", "15.5", "macOS Monterey", "``safari155``", "``curl_safari155``", ""
    "Safari", "17.0", "macOS Sonoma", "``safari170``", "``curl_safari170``", ""
@@ -70,3 +96,6 @@ Notes:
    `Issue #215 <https://github.com/lwthiker/curl-impersonate/issues/215>`_.
 3. The version postfix ``-a`` in names such as ``chrome133a`` means the profile is an
    alternative version observed in A/B testing rather than an officially rolled update.
+4. Chrome 143 through 146 include platform-specific aliases for Windows, macOS,
+   Linux, Android and iOS. Brave 136 and Brave 145 include macOS, Windows and
+   Android aliases.

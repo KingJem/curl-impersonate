@@ -36,8 +36,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Check if tag is present
-        id: check_tag
+      - name: Prepare docker metadata
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
           if [[ "${GITHUB_REPOSITORY}" == "lexiforest/curl-impersonate" ]]; then
             echo "docker_namespace=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
@@ -53,22 +54,30 @@ jobs:
             echo "image_tag=latest" >> $GITHUB_ENV
           fi
 
+          if [[ "${GITHUB_REPOSITORY}" == "lexiforest/curl-impersonate" && -n "${DOCKER_USERNAME}" ]]; then
+            echo "docker_image=${DOCKER_USERNAME}/curl-impersonate" >> $GITHUB_ENV
+            echo "can_push_docker=true" >> $GITHUB_ENV
+          else
+            echo "docker_image=curl-impersonate" >> $GITHUB_ENV
+            echo "can_push_docker=false" >> $GITHUB_ENV
+          fi
+
       - name: Build debian docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           file: docker/debian.dockerfile
-          push: ${{ github.repository == 'lexiforest/curl-impersonate' && env.push_image == 'true' && 'true' || 'false' }}
+          push: ${{ env.can_push_docker == 'true' && env.push_image == 'true' && 'true' || 'false' }}
           tags: |
-            ${{ env.docker_namespace }}/curl-impersonate:${{ env.image_tag }}
-            ${{ env.docker_namespace }}/curl-impersonate:latest
+            ${{ env.docker_image }}:${{ env.image_tag }}
+            ${{ env.docker_image }}:latest
 
       - name: Build alpine docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           file: docker/alpine.dockerfile
-          push: ${{ github.repository == 'lexiforest/curl-impersonate' && env.push_image == 'true' && 'true' || 'false' }}
+          push: ${{ env.can_push_docker == 'true' && env.push_image == 'true' && 'true' || 'false' }}
           tags: |
-            ${{ env.docker_namespace }}/curl-impersonate:${{ env.image_tag }}-alpine
-            ${{ env.docker_namespace }}/curl-impersonate:alpine
+            ${{ env.docker_image }}:${{ env.image_tag }}-alpine
+            ${{ env.docker_image }}:alpine
