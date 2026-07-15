@@ -59,6 +59,10 @@
   - null
   - null
   - chrome_142.0.7444.176_macOS
+- - curl_chrome147
+  - null
+  - null
+  - chrome_147.0.7727.15_macOS
 - - curl_chrome148
   - null
   - null
@@ -243,6 +247,10 @@
   - CURL_IMPERSONATE: chrome136
   - libcurl-impersonate
   - chrome_136.0.7103.93_macOS
+- - minicurl
+  - CURL_IMPERSONATE: chrome147
+  - libcurl-impersonate
+  - chrome_147.0.7727.15_macOS
 - - minicurl
   - CURL_IMPERSONATE: chrome148
   - libcurl-impersonate
