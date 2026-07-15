@@ -1,0 +1,150 @@
+# Captured from Chrome for Testing 147.0.7727.15 on macOS over h2.
+browser:
+  name: chrome
+  os: macOS
+  version: 147.0.7727.15
+signature:
+  options:
+    tls_permute_extensions: true
+  http2:
+    frames:
+    - frame_type: SETTINGS
+      settings:
+      - key: 1
+        value: 65536
+      - key: 2
+        value: 0
+      - key: 4
+        value: 6291456
+      - key: 6
+        value: 262144
+      stream_id: 0
+    - frame_type: WINDOW_UPDATE
+      stream_id: 0
+      window_size_increment: 15663105
+    - frame_type: HEADERS
+      headers:
+      - 'sec-ch-ua: "Chromium";v="147", "Not.A/Brand";v="8"'
+      - 'sec-ch-ua-mobile: ?0'
+      - 'sec-ch-ua-platform: "macOS"'
+      - 'upgrade-insecure-requests: 1'
+      - 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
+      - 'accept-language: en-US'
+      - 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+      - 'sec-fetch-site: none'
+      - 'sec-fetch-mode: navigate'
+      - 'sec-fetch-user: ?1'
+      - 'sec-fetch-dest: document'
+      - 'accept-encoding: gzip, deflate, br, zstd'
+      - 'priority: u=0, i'
+      pseudo_headers:
+      - :method
+      - :authority
+      - :scheme
+      - :path
+      stream_id: 1
+  tls_client_hello:
+    ciphersuites:
+    - GREASE
+    - 4865
+    - 4866
+    - 4867
+    - 49195
+    - 49199
+    - 49196
+    - 49200
+    - 52393
+    - 52392
+    - 49171
+    - 49172
+    - 156
+    - 157
+    - 47
+    - 53
+    comp_methods:
+    - 0
+    extensions:
+    - length: 0
+      type: GREASE
+    - length: 12
+      supported_groups:
+      - GREASE
+      - 4588
+      - 29
+      - 23
+      - 24
+      type: supported_groups
+    - length: 7
+      supported_versions:
+      - GREASE
+      - TLS_VERSION_1_3
+      - TLS_VERSION_1_2
+      type: supported_versions
+    - length: 2
+      psk_ke_mode: 1
+      type: psk_key_exchange_modes
+    - alpn_list:
+      - h2
+      - http/1.1
+      length: 14
+      type: application_layer_protocol_negotiation
+    - type: server_name
+    - alps_alpn_list:
+      - h2
+      length: 5
+      type: application_settings_new
+    - length: 0
+      type: signed_certificate_timestamp
+    - ec_point_formats:
+      - 0
+      length: 2
+      type: ec_point_formats
+    - length: 18
+      sig_hash_algs:
+      - 1027
+      - 2052
+      - 1025
+      - 1283
+      - 2053
+      - 1281
+      - 2054
+      - 1537
+      type: signature_algorithms
+    - length: 5
+      status_request_type: 1
+      type: status_request
+    - length: 0
+      type: extended_master_secret
+    - algorithms:
+      - 2
+      length: 3
+      type: compress_certificate
+    - length: 1
+      type: renegotiation_info
+    - length: 0
+      type: session_ticket
+    - key_shares:
+      - group: GREASE
+        length: 1
+      - group: 4588
+        length: 1216
+      - group: 29
+        length: 32
+      length: 1263
+      type: keyshare
+    - length: 250
+      type: encrypted_client_hello
+    - data: !!binary |
+        AA==
+      length: 1
+      type: GREASE
+    handshake_version: TLS_VERSION_1_2
+    record_version: TLS_VERSION_1_0
+    session_id_length: 32
+third_party:
+  akamai_hash: 52d84b11737d980aef856699f885ca86
+  akamai_text: 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p
+  ja3_hash: 9184351fcdfa6a6d0dae2f4f7410ceb1
+  ja3_text: 771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,10-43-45-16-0-17613-18-11-13-5-23-27-65281-35-51-65037,4588-29-23-24,0
+  ja4: t13d1516h2_8daaf6152771_d8a2da3f94cd
+  peetprint_hash: 1d4ffe9b0e34acac0bd883fa7f79d7b5

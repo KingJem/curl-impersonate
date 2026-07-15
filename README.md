@@ -95,6 +95,7 @@ The following browsers can be impersonated. For a full list of browser profiles,
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 142 | macOS Tahoe | `chrome142` | [curl_chrome142](bin/curl_chrome142) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 145 | macOS Tahoe | `chrome145` | [curl_chrome145](bin/curl_chrome145) | ✅ |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 146 | macOS Tahoe | `chrome146` | [curl_chrome146](bin/curl_chrome146) | ✅ |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 147 | macOS Tahoe | `chrome147` | [curl_chrome147](bin/curl_chrome147) | ✅ |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 148 | Windows 10 | `chrome148` | [curl_chrome148](bin/curl_chrome148) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 149 | Windows 10 | `chrome149` | [curl_chrome149](bin/curl_chrome149) |
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png "Chrome") | 150 | Windows 10 | `chrome150` | [curl_chrome150](bin/curl_chrome150) |
@@ -141,7 +142,7 @@ Notes:
 
 This list is also available in the [browsers.json](browsers.json) file.
 
-Platform-specific Chrome variants are also available for `chrome143_*`, `chrome144_*`, `chrome145_*` and `chrome146_*`.
+Platform-specific Chrome variants are also available for `chrome143_*`, `chrome144_*`, `chrome145_*`, `chrome146_*` and `chrome147_*`.
 
 ## Install
 
