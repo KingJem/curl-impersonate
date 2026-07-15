@@ -2591,7 +2591,7 @@ new file mode 100644
 index 0000000..b506a95
 --- /dev/null
 +++ b/lib/impersonate.c
-@@ -0,0 +1,5460 @@
+@@ -0,0 +1,5538 @@
 +#include "curl_setup.h"
 +#include <curl/curl.h>
 +#include "impersonate.h"
